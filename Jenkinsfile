@@ -4,7 +4,7 @@
     environment {
         // Docker Hub credentials and repository info
         DOCKER_HUB_CREDENTIALS = 'DockerHub'  // Use the credentials ID from step 1
-        DOCKER_HUB_REPO = 'ahmedembaby24590/myapp'  // Replace with your Docker Hub username and image name
+        DOCKER_HUB_REPO = 'ahmedembaby24590/dockerimage'  // Replace with your Docker Hub username and image name
         DOCKER_TAG = 'latest'  // You can change the tag to a version like 'v1.0'
     }
 
