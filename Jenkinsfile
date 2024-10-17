@@ -26,4 +26,5 @@ pipeline {
                 sh "docker push ahmedembaby24590/depi-image:depi-image"
             }
         }
-	
+     }
+}
