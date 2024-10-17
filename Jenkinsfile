@@ -21,7 +21,7 @@
             steps {
                 script {
                     // Login to Docker Hub using credentials
-                    docker.withRegistry('https://index.docker.io/v1/', DOCKER_HUB_CREDENTIALS) {
+                    docker.withRegistry('https://hub.docker.com/repository/docker/ahmedembaby24590/myapp/general', DOCKER_HUB_CREDENTIALS) {
                         // This block is necessary for Docker Hub login
                     }
                 }
@@ -32,13 +32,4 @@
                 sh 'ansible-playbook ansible-playbook.yml'
             }
         }
-        post {
-            success {
-            echo 'Docker image pushed successfully!'
-         }
-            failure {
-            echo 'Failed to push Docker image.'
-        }
-    }
-}
-}
+
