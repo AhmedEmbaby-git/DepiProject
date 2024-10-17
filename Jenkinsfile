@@ -23,4 +23,32 @@ pipeline {
         }
      }
 }
+
+stage('Deploy to AWS EKS') {
+    steps {
+        script {
+            echo 'Deploying to AWS Elastic Kubernetes Service (EKS)'
+            withCredentials([file(credentialsId: 'AWS_CREDENTIALS', variable: 'AWS_CREDENTIALS_FILE')]) {
+                sh """
+                # Configure AWS CLI with the specified credentials
+                export AWS_ACCESS_KEY_ID=$(aws configure get aws_access_key_id --profile my-aws-profile)
+                export AWS_SECRET_ACCESS_KEY=$(aws configure get aws_secret_access_key --profile my-aws-profile)
+                export AWS_DEFAULT_REGION=us-west-2 # Change to your desired region
+
+                # Update kubeconfig for EKS
+                aws eks --region us-east-1 update-kubeconfig --name my-eks-cluster
+
+                # Check Kubernetes cluster information
+                kubectl cluster-info
+                
+                # Update the image for the deployment
+                kubectl set image deployment/app-deployment my-app-container=ahmedembaby24590/depi-image:depi-image
+                
+                # Check the rollout status
+                kubectl rollout status deployment/app-deployment
+                """
+            }
+        }
+    }
+}
         
