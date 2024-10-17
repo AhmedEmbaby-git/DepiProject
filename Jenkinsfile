@@ -6,14 +6,6 @@
         DOCKER_HUB_REPO = 'ahmedembaby24590/depi-image'  // Replace with your Docker Hub username and image name
         DOCKER_IMAGE = "depi-image"
     }
-        stages {
-          stage('Pull Repository') {
-            steps {
-                echo 'Pulling the repository'
-                sh 'git clone http://github.com/AhmedEmbaby-git/DepiProject.git' 
-            }
-        }
-
        stage('Docker Login') {
             steps {
                 script {
