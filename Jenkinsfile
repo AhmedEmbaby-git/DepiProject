@@ -12,7 +12,7 @@
         stage('Checkout') {
             steps {
                 // Checkout your code from Git repository
-                git branch: 'main', url: 'https://github.com/AhmedEmbaby-git/DepiProject.git', credentialsId:'jenkinskey' 
+                git branch: 'main', url: 'http://github.com/AhmedEmbaby-git/DepiProject.git', credentialsId:'jenkinskey' 
 
             }
         }
