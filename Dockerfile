@@ -2,4 +2,4 @@ FROM httpd:latest
 
 
 
-COPY ./commingsoon /usr/local/apache2/htdocs
+COPY ./app /usr/local/apache2/htdocs
