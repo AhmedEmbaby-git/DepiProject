@@ -12,14 +12,14 @@
       ignore_errors: yes
 
     - name: remove comingsoon-image
-      command: docker rmi Depi-Image
+      command: docker rmi depi-image
       ignore_errors: yes
 
     - name: build docker image using the Dockerfile
-      command: docker build -t Depi-Image .
+      command: docker build -t depi-image .
 
     - name: Push Image to dockerhub
-      command: docker push Depi-Image
+      command: docker push depi-image
 
     - name: run container
-      command: docker run -d --name web-container -p 5000:80 Depi-Image
+      command: docker run -d --name web-container -p 5000:80 depi-image
