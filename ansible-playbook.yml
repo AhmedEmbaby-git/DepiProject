@@ -2,12 +2,22 @@
 - name: "Build a container with ansible"
   hosts: localhost
   connection: local
+  vars:
+     local_image: "ahmedembaby24590/depi-image:depi-image"
+     repository: "{{ ahmedembaby24590/depi-image }}
   tasks:
     - name: build docker image using the Dockerfile
       command: docker build -t depi-image .
+      
+    - name: Tag the Docker image
+      community.docker.docker_image:
+        name: "{{ local_image }}"
+        tag: "depi-image"
+        repository: "{{ repository }}" 
 
     - name: Push the Docker image to Docker Hub
       community.docker.docker_image:
+        name: "{{ local_image }}"
         command: docker push ahmedembaby24590/depi-image:depi-image
         push: yes
 
