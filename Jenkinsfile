@@ -17,15 +17,6 @@
             }
         }
 
-        stage('Build Docker Image') {
-            steps {
-                script {
-                    // Build the Docker image
-                    sh "docker build -t ${DOCKER_HUB_REPO}:${DOCKER_TAG} ."
-                }
-            }
-        }
-
         stage('Login to Docker Hub') {
             steps {
                 script {
@@ -35,18 +26,12 @@
                     }
                 }
             }
-        }
-
-        stage('Push Docker Image') {
+	}
+        stage('Build & push Dockerfile') {
             steps {
-                script {
-                    // Push the image to Docker Hub
-                    sh "docker push ${DOCKER_HUB_REPO}:${DOCKER_TAG}"
-                }
+                sh 'ansible-playbook ansible-playbook.yml'
             }
         }
-    }
-
     post {
         success {
             echo 'Docker image pushed successfully!'
