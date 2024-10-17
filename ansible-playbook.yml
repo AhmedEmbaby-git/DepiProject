@@ -9,7 +9,7 @@
     - name: Push the Docker image to Docker Hub
       community.docker.docker_image:
         name: "{{ ahmedembaby24590}}/depi-image:latest"
-        command: docker push ahmedembaby24590/depi-image:latest
+        command: docker push ahmedembaby24590/depi-image:depi-image
         push: yes
 
     - name: run container
