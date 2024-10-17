@@ -16,17 +16,11 @@ pipeline {
                 }
             }
         }
-	     stage('Build  Dockerfile') {
+	     stage('Build & push Dockerfile') {
               steps {
                 sh 'ansible-playbook ansible-playbook.yml'
             }
         }
      }
 }
-            stage('push to   Dockerhub') {
-             steps {
-                sh "docker push ahmedembaby24590/depi-image:depi-image"
-            }
-        }
-     }
-}
+        
