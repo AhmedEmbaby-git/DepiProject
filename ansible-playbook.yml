@@ -6,8 +6,10 @@
     - name: build docker image using the Dockerfile
       command: docker build -t depi-image .
 
-    - name: Push Image to dockerhub
-      command: docker push depi-image
+    - name: Push the Docker image to Docker Hub
+      community.docker.docker_image:
+        name: "{{ ahmedembaby24590}}/depi-image:latest"
+        push: yes
 
     - name: run container
       command: docker run -d --name web-container -p 5000:80 depi-image
