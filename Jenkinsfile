@@ -32,13 +32,13 @@
                 sh 'ansible-playbook ansible-playbook.yml'
             }
         }
-    post {
-        success {
+        post {
+            success {
             echo 'Docker image pushed successfully!'
-        }
-        failure {
+         }
+            failure {
             echo 'Failed to push Docker image.'
         }
     }
 }
-
+}
