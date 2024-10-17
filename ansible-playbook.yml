@@ -11,7 +11,7 @@
       command: docker rm web-container
       ignore_errors: yes
 
-    - name: remove comingsoon-image
+    - name: remove image
       command: docker rmi ahmedembaby24590/depi-image:depi-image
       ignore_errors: yes
 
