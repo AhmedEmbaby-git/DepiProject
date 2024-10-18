@@ -24,31 +24,5 @@ pipeline {
      }
 }
 
-            stage('Deploy to AWS EKS') {
-              steps {
-                script {
-                  echo 'Deploying to AWS Elastic Kubernetes Service (EKS)'
-                {
-                sh """
-                # Configure AWS CLI with the specified credentials
-                export AWS_ACCESS_KEY_ID=$( AWS_ACCESS_KEY_ID )
-                export AWS_SECRET_ACCESS_KEY=$( AWS_SECRET_ACCESS_KEY)
-                export AWS_DEFAULT_REGION=us-east-1 # Change to your desired region
 
-                # Update kubeconfig for EKS
-                aws eks --region us-east-1 update-kubeconfig --name Depi-Cluster
-
-                # Check Kubernetes cluster information
-                kubectl cluster-info
-                
-                # Update the image for the deployment
-                kubectl set image deployment/app-deployment my-app-container=ahmedembaby24590/depi-image:depi-image
-                
-                # Check the rollout status
-                kubectl rollout status deployment/app-deployment
-                """
-            }
-        }
-    }
-}
         
