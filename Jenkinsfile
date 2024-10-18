@@ -24,11 +24,11 @@ pipeline {
      }
 }
 
-stage('Deploy to AWS EKS') {
-    steps {
-        script {
-            echo 'Deploying to AWS Elastic Kubernetes Service (EKS)'
-              {
+            stage('Deploy to AWS EKS') {
+              steps {
+                script {
+                  echo 'Deploying to AWS Elastic Kubernetes Service (EKS)'
+                {
                 sh """
                 # Configure AWS CLI with the specified credentials
                 export AWS_ACCESS_KEY_ID=$( AWS_ACCESS_KEY_ID )
