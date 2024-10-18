@@ -28,15 +28,15 @@ stage('Deploy to AWS EKS') {
     steps {
         script {
             echo 'Deploying to AWS Elastic Kubernetes Service (EKS)'
-            withCredentials([file(credentialsId: 'AWS_CREDENTIALS', variable: 'AWS_CREDENTIALS_FILE')]) {
+              {
                 sh """
                 # Configure AWS CLI with the specified credentials
-                export AWS_ACCESS_KEY_ID=$(aws configure get AWS_ACCESS_KEY_ID --profile my-aws-profile)
-                export AWS_SECRET_ACCESS_KEY=$(aws configure get AWS_SECRET_ACCESS_KEY --profile my-aws-profile)
+                export AWS_ACCESS_KEY_ID=$( AWS_ACCESS_KEY_ID )
+                export AWS_SECRET_ACCESS_KEY=$( AWS_SECRET_ACCESS_KEY)
                 export AWS_DEFAULT_REGION=us-east-1 # Change to your desired region
 
                 # Update kubeconfig for EKS
-                aws eks --region us-east-1 update-kubeconfig --name my-eks-cluster
+                aws eks --region us-east-1 update-kubeconfig --name Depi-Cluster
 
                 # Check Kubernetes cluster information
                 kubectl cluster-info
