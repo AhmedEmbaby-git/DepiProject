@@ -26,5 +26,5 @@
 #### Full Testing and Deployment: Conduct full tests of the CI/CD pipeline, from code commit to deployment.
 #### Documentation: Complete documentation of the project, including pipeline design, deployment process, and any issues faced.
 
-Technologies:
-Docker, CI-CD/Jenkins, Ansible and AWS public EC2.
+##Technologies:
+####Docker, CI-CD/Jenkins, Ansible and AWS public EC2.
