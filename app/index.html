@@ -56,7 +56,7 @@
       <div class="weather-info">
         <h3 class="location name" id="location">Cairo</h3>
         <p class="temperature temp_c">29°C</p>
-        <p class="description url">Cloudy</p>
+        <p class="description url">partly-Cloudy</p>
       </div>
       <div class="timeLbl" id="local-time"></div>
     </div>
@@ -102,11 +102,7 @@
   <section id="weather-forecast">
     <h1 class="heders">Weather Forecast 🗺</h1>
 
-    <div class="date-serch">
-      To : <input id="startDate" type="date">&nbsp;&nbsp;&nbsp;
-      End : <input id="endDate" type="date">
-      <button onclick="searchForecast()">Search Date</button>
-    </div>
+ 
     <hr>
     <div style="overflow-x:auto;">
       <table class="tblForcast">
@@ -184,14 +180,11 @@
     </div>
   </section>
 
-  <section id="weather-map">
-    <h1 class="heders">Map</h1>
-    <div id="map" class="img" src="istockphoto-1404349414-170667a.png" alt="">
-    </div>
+
   </section>
   <!--------------------------------------news cards------------------------------------------------->
   <section id="news">
-    <h1 class="heders">Top stories🎗</h1>
+    <h1 class="heders"></h1>
       <div class="grid-cols-1 sm:grid md:grid-cols-3">
         <div
           class="mx-3 mt-6 flex flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 sm:shrink-0 sm:grow sm:basis-0">
@@ -204,7 +197,7 @@
              
           </div>
           <div class="mt-auto border-t-2 border-neutral-100 px-6 py-3 text-center dark:border-neutral-600">
-            <small id="ptime1">Last updated 3 mins ago</small>
+            <small id="ptime1"></small>
           </div>
         </div>
         <div
@@ -218,7 +211,7 @@
              
           </div>
           <div class="mt-auto border-t-2 border-neutral-100 px-6 py-3 text-center dark:border-neutral-600">
-            <small id="ptime2">Last updated 3 mins ago</small>
+            <small id="ptime2"></small>
           </div>
         </div>
         <div
@@ -232,7 +225,7 @@
             
           </div>
           <div class="mt-auto border-t-2 border-neutral-100 px-6 py-3 text-center dark:border-neutral-600 ">
-            <small id="ptime3">Last updated 3 mins ago</small>
+            <small id="ptime3"></small>
           </div>
         </div>
       </div>
