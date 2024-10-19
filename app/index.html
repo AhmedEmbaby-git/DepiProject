@@ -26,7 +26,9 @@
           <li><a href="">HOME</a></li>
           <li><a href="#current-weather">CURRNENT</a></li>
           <li><a href="#weather-forecast">FORECAST</a></li>
-          
+          <li><a href="#news">NEWS</a></li>
+          <li><a href="#weather-map">MAP</a></li>
+          <li><a href="#footer">SUBSCRIBE</a></li>
         </ul>
       </div>
       <i class="fa fa-bars" onclick="showMenu()"></i>
@@ -51,8 +53,8 @@
         <img class="weatherIcon1" id="weatherIcon" alt="Weather Icon" src="img/icons8-cloud-lightning-96.png" />
       </div>
       <div class="weather-info">
-        <h3 class="location name" id="location">Cairo</h3>
-        <p class="temperature temp_c">29°C</p>
+        <h3 class="location name" id="location">Panadura</h3>
+        <p class="temperature temp_c">25°C</p>
         <p class="description url">Cloudy</p>
       </div>
       <div class="timeLbl" id="local-time"></div>
@@ -109,25 +111,25 @@
       <table class="tblForcast">
         <tr>
           <td>
-            <strong id="date1">2024-10-23</strong>
+            <strong id="date1">2023-02-24</strong>
           </td>
           <td>
-            <strong id="date2">2024-10-24</strong>
+            <strong id="date2">2023-02-25</strong>
           </td>
           <td>
-            <strong id="date3">2024-10-25</strong>
+            <strong id="date3">2023-02-26</strong>
           </td>
           <td>
-            <strong id="date4">2024-10-26</strong>
+            <strong id="date4">2023-02-27</strong>
           </td>
           <td>
-            <strong id="date5">2024-10-27</strong>
+            <strong id="date5">2023-02-28</strong>
           </td>
           <td>
-            <strong id="date6">2024-10-28</strong>
+            <strong id="date6">2023-02-29</strong>
           </td>
           <td>
-            <strong id="date7">2024-10-29</strong>
+            <strong id="date7">2023-02-30</strong>
           </td>
         </tr>
         <tr>
@@ -179,11 +181,16 @@
 
       </table>
     </div>
+  </section>
 
+  <section id="weather-map">
+    <h1 class="heders">Map</h1>
+    <div id="map" class="map-d">
+    </div>
   </section>
   <!--------------------------------------news cards------------------------------------------------->
   <section id="news">
-    <h1 class="heders"></h1>
+    <h1 class="heders">Top stories🎗</h1>
       <div class="grid-cols-1 sm:grid md:grid-cols-3">
         <div
           class="mx-3 mt-6 flex flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 sm:shrink-0 sm:grow sm:basis-0">
@@ -193,7 +200,12 @@
           </a>
           <div class="p-6">
             <h5 id="title1" class="mb-2 text-xl font-medium leading-tight text-neutral-800">
-              
+              Card title
+            </h5>
+            <p id="p1" class="mb-4 text-base text-neutral-600">
+              This is a wider card with supporting text below as a natural
+              lead-in to additional content. This content is a little bit
+              longer.
             </p>
           </div>
           <div class="mt-auto border-t-2 border-neutral-100 px-6 py-3 text-center dark:border-neutral-600">
@@ -208,7 +220,12 @@
           </a>
           <div class="p-6">
             <h5 id="title2" class="mb-2 text-xl font-medium leading-tight text-neutral-800">
-            
+              Card title
+            </h5>
+            <p id="p2" class="mb-4 text-base text-neutral-600 ">
+              This card has supporting text below as a natural lead-in to
+              additional content.
+            </p>
           </div>
           <div class="mt-auto border-t-2 border-neutral-100 px-6 py-3 text-center dark:border-neutral-600">
             <small id="ptime2">Last updated 3 mins ago</small>
@@ -222,7 +239,13 @@
           </a>
           <div class="p-6">
             <h5 id="title3" class="mb-2 text-xl font-medium leading-tight text-neutral-800 ">
-            
+              Card title
+            </h5>
+            <p id="p3" class="mb-4 text-base text-neutral-600">
+              This is a wider card with supporting text below as a natural
+              lead-in to additional content. This card has even longer content
+              than the first to show that equal height action.
+            </p>
           </div>
           <div class="mt-auto border-t-2 border-neutral-100 px-6 py-3 text-center dark:border-neutral-600 ">
             <small id="ptime3">Last updated 3 mins ago</small>
