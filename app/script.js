@@ -44,7 +44,7 @@ function showPosition(position) {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
 
-  marker = L.marker([latitude, longitude]);
+  marker = L.marker([latitude, longitude]).addTo(map);
   marker.setLatLng([latitude, longitude]).update();
   map.setView([latitude, longitude]);
 
