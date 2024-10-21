@@ -13,8 +13,6 @@ pipeline {
                     withCredentials([usernamePassword(credentialsId: 'DockerHub')])
                     }
                 }
-            }
-        }
 	     stage('Build & push Dockerfile') {
               steps {
                 sh 'ansible-playbook ansible-playbook.yml'
