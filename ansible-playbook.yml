@@ -23,6 +23,6 @@
 
     - name: run container
       command: docker run -d --name web-container -p 5000:80 ahmedembaby24590/depi-image:depi-image
-     # command: docker start  web-container 
+      command: docker start  web-container 
 
    
