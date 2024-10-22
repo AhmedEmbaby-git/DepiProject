@@ -104,17 +104,38 @@ function fetchWeatherData(location) {
 
 // -------------------------------------------------updateLocalTime-----------------------------
 
-function updateLocalTime() {
-  const localTimeElement = document.getElementById("local-time");
-  const now = new Date();
-  const localTimeString = now.toLocaleTimeString();
+// Function to update the time based on location
+function updateTime(latitude, longitude) {
+    // Call a Timezone API to get the local time based on the coordinates
+    const apiUrl = `https://worldtimeapi.org/api/timezone/Etc/UTC`;
 
-  localTimeElement.textContent = `${localTimeString}`;
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            // Get the current time from the API response
+            const currentTime = new Date(data.utc_datetime);
+
+            // Update the HTML with the local time
+            document.getElementById('local-time').innerHTML = currentTime.toLocaleString();
+        })
+        .catch(error => {
+            console.error("Error fetching time data:", error);
+            document.getElementById('local-time').innerHTML = "Unable to fetch time";
+        });
 }
 
-updateLocalTime();
+// Use Geolocation API to get the user's location
+if (navigator.geolocation) {
+    navigator.geolocation.watchPosition((position) => {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
 
-setInterval(updateLocalTime, 1000);
+        // Update the time whenever the location changes
+        updateTime(latitude, longitude);
+    });
+} else {
+    document.getElementById('local-time').innerHTML = "Geolocation is not supported by this browser.";
+}
 
 //---------------------------------------------------searchForecast-------------------------------------
 
